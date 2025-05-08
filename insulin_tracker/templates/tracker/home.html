@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title  %} Главная страница {% endblock %}
+{% block content %}
+<div class="main-container">
+    <h1 class="main-title">Привет, трекай уколы</h1>
+    
+    <div class="button-group">
+        <a href='{% url "records_list" %}' class='action-button'>
+            <span class="icon">📋</span>
+            <span>Список записей</span>
+        </a>
+        
+        <a href='{% url "add_injection" %}' class='action-button primary'>
+            <span class="icon">➕</span>
+            <span>Новая запись</span>
+        </a>
+        
+        <a href='{% url "edit_records" %}' class='action-button'>
+            <span class="icon">✏️</span>
+            <span>Редактировать</span>
+        </a>
+    </div>
+</div>
+{% endblock %}

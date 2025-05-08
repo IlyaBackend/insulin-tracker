@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="edit-list-container">
+    <h1 class="edit-list-title">
+        <i class="fas fa-edit"></i> Выберите запись для редактирования
+    </h1>
+    
+    <div class="records-list">
+        {% for record in records %}
+        <div class="record-card">
+            <div class="record-info">
+                <span class="record-date">
+                    <i class="far fa-calendar-alt"></i> {{ record.date|date:"d.m.Y H:i" }}
+                </span>
+                <span class="record-status {% if record.injected %}injected{% else %}skipped{% endif %}">
+                    {% if record.injected %}
+                        <i class="fas fa-check-circle"></i> Вколот
+                    {% else %}
+                        <i class="fas fa-times-circle"></i> Пропущен
+                    {% endif %}
+                </span>
+            </div>
+            <a href='{% url "edit_record" record.id %}' class="edit-btn">
+                <i class="fas fa-pencil-alt"></i> Редактировать
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="action-buttons">
+        <a href='{% url "home" %}' class="home-link">
+            <i class="fas fa-home"></i> На главную
+        </a>
+    </div>
+</div>
+{% endblock %}

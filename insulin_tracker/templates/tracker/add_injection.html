@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Новая запись{% endblock %}
+{% block content %}
+<div class="edit-form-container">
+<body>
+    <h1><i class="fas fa-edit"></i> Добавить инсулиновую запись</h1>
+    <form method='post'>
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="checkbox-label">
+                {{ form.as_p }}
+            </label>
+        </div>
+        <div class="button-group">
+            <button type="submit" class="btn btn-save">
+                <i class="fas fa-save"></i> Сохранить
+            </button>
+            <a href="{% url 'records_list' %}" class="btn btn-cancel">
+                <i class="fas fa-times"></i> Отмена
+            </a>
+    </form>
+</body>
+</div>
+{% endblock %}

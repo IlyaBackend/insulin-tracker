@@ -35,7 +35,8 @@ def edit_records(request):
 
 
 def edit_single_record(request, record_id):
-    record = get_object_or_404(InsulinInjection, id=record_id)
+    '''Изменить одну запись'''
+    record = get_object_or_404(InsulinInjection, id=record_id) # ошибка 404 если запись не найдена
     if request.method == 'POST':
         form = InjectionForm(request.POST, instance=record)
         if form.is_valid():

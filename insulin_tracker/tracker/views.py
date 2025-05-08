@@ -24,13 +24,13 @@ def add_injection(request):
 
 def records_list(request):
     '''Показать последние 5 записей'''
-    records = InsulinInjection.objects.all().order_by('-date')[:10]
+    records = InsulinInjection.objects.all().order_by('-date')[:5]
     return render(request, 'tracker/records_list.html', {'records': records})
 
 
 def edit_records(request):
     '''Показываем записи для редактирования'''
-    records = InsulinInjection.objects.all().order_by('date')
+    records = InsulinInjection.objects.all().order_by('-date')
     return render(request, 'tracker/edit_list.html', {'records': records})
 
 

@@ -1,0 +1,11 @@
+<h1>Выбери запись для редактирования</h1>
+<ul>
+    {% for record in records %}
+        <li>
+            <a href='{% url "edit_record" record.id %}'>Редактировать</a>
+                {{ record.date }} -
+                {% if record.injected %}Вколот{% else %}Пропущен{% endif %}
+        </li>
+    {% endfor %}
+</ul>
+<a href = '{% url "home" %}'>На главную </a>

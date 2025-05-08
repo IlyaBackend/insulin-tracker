@@ -1,0 +1,11 @@
+<h1>Последние записи</h1>
+<ul>
+    {% for record in records %}
+        <li>
+            {{ record.date }} -
+            {% if record.injected %}Вколот{% else %}Пропущен{% endif %}
+            {% if record.notes %}({{ record.notes }}){% endif %}
+        </li>
+    {% endfor %} 
+</ul>
+<a href = '{% url "home" %}'>На главную </a>

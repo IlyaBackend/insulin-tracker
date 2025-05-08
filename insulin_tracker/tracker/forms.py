@@ -9,4 +9,4 @@ from .models import InsulinInjection
 class InjectionForm(forms.ModelForm):
     class Meta:
         model = InsulinInjection
-        fields = ['injected', 'notes']
+        fields = ['date', 'injected', 'notes']

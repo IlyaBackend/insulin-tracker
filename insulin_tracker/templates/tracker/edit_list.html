@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% block title %}Список для изменения{% endblock %}
 {% block content %}
 <div class="edit-list-container">
     <h1 class="edit-list-title">
@@ -15,7 +15,7 @@
                 </span>
                 <span class="record-status {% if record.injected %}injected{% else %}skipped{% endif %}">
                     {% if record.injected %}
-                        <i class="fas fa-check-circle"></i> Вколот
+                        <i class="fas fa-check-circle"></i> Инсулин +
                     {% else %}
                         <i class="fas fa-times-circle"></i> Пропущен
                     {% endif %}

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% block title %}История последних записей{% endblock %}
 {% block content %}
 <div class="records-container">
     <h1 class="records-title">
@@ -15,7 +15,7 @@
                 </span>
                 <span class="record-status">
                     {% if record.injected %}
-                        <i class="fas fa-check-circle"></i> Вколот
+                        <i class="fas fa-check-circle"></i> Инсулин +
                     {% else %}
                         <i class="fas fa-times-circle"></i> Пропущен
                     {% endif %}
